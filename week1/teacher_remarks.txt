@@ -1,0 +1,16 @@
+* Acteurs:
+  - les utilisateurs (voyageurs)  
+  - les intermédiaires comme acteurs
+
+* Fonctionnalités : calcul du coût (dépense) de l'itinéraire (métriques (distance, temps...) variables en fonction des circonstances(Embouteillages et temps, fonc temps effectif à prendre dans ce cas par exemple))
+
+* Outils:
+  - cartographie : leaflet, open street map
+  - analyse des données : Chercher mieux (comme Cassandra)
+  - catching (accélérateur de navigation) redix
+  - mapping: postdix
+  - alimentation des données : nosql 
+  - Graffana : Analyse temps réel des données (traquer les metriques)
+  - Promoteos : couplé avec Graffana pour traquer les erreurs et performances de l'application 
+  - NodeJS, ExpressJS, ReactJS, NextJS : outils de développement 
+  - Git et GitHub pour le versioning
