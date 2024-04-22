@@ -1,0 +1,28 @@
+\documentclass[a4paper,11pt]{article}
+\input{Preambule}
+
+\begin{document}
+
+\ThisCenterWallPaper{1}{Images/Background.png}
+\input{Titlepage}
+
+% \pagenumbering{gobble}
+\pagenumbering{arabic}
+
+
+\renewcommand{\contentsname}{Table des matières}
+\tableofcontents
+
+
+\newpage
+
+\input{Introduction}\newpage
+\input{1_Contexte_Besoins}\newpage
+% \input{2_Modelisation_mathematique}\newpage
+\input{3_Modelisation_UML}\newpage
+\input{4_Spécifications_Techniques}\newpage
+\input{Annexe}\newpage
+
+\input{../biblio}\newpage
+
+\end{document}

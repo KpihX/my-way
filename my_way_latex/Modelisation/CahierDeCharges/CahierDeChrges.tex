@@ -1,0 +1,53 @@
+\documentclass[a4paper,11pt]{article}
+\input{Modelisation/preambule}
+
+\begin{document}
+
+\ThisCenterWallPaper{1}{Images/Background.png}
+
+
+% \pagenumbering{gobble}
+\pagenumbering{arabic}
+
+\input{Modelisation/CahierDeCharges/PageDeGarde}\newpage
+
+\renewcommand{\contentsname}{Table des matières}
+\tableofcontents
+\newpage
+\section{Introduction}
+\input{Introduction.tex}
+\newpage
+
+\section{Présentation du Projet}
+\input{PresentationProjet.tex}
+\newpage
+
+\section{Expression des besoins}
+\input{ExpressionBesoins.tex}
+\newpage
+
+\section{Déroulement du projet}
+\input{DeroulementProjet.tex}
+\newpage
+
+\section{Planning}
+\input{Planning.tex}
+\newpage
+
+\section{Charte Graphique du Logiciel}
+\input{CharteGraphique.tex}
+\newpage
+
+\section{Exemple de prototype pour l’interface principal de connexion}
+\input{Prototype.tex}
+\newpage
+
+\section{Conclusion}
+\input{Conclusion.tex}
+\newpage
+
+\section{Bibliographie}
+\input{Bibliographie.tex}
+\newpage
+
+\end{document}

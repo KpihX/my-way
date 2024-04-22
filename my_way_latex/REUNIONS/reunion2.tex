@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum} % Package used to generate dummy text
+\usepackage{tocloft} % Package used to format table of contents
+\usepackage{titlesec} % Package used to format titles
+\usepackage{geometry} % Package used to adjust page layout
+
+% Formatting titles
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Formatting table of contents
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsubsecfont}{\normalfont}
+\renewcommand{\cftsubsubsecpagefont}{\normalfont}
+
+% Adjusting page layout
+\geometry{margin=1in} % Set 1-inch margins
+
+\title{Rapport de Réunion de Groupe}
+\author{NOMO \and KAMDEM \and DONCHI \and DJONGO}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    \Large\textbf{Cours de Réseaux Informatiques}\par
+    \vspace{0.5cm}
+    \Large\textbf{Projet : My-Way}\par
+    \vspace{0.5cm}
+    \Large\textbf{Un outil efficace pour la gestion et le parcours d'itinéraires}\par
+    \vspace{1cm}
+    \textbf{Superviseurs : [Nom du superviseur 1], [Nom du superviseur 2]}\par
+    \vspace{1cm}
+    \Large\textbf{Rapport de Première Réunion de Groupe}\par
+    \vspace{1cm}
+    \textbf{NOMO}\par
+    \textbf{KAMDEM}\par
+    \textbf{DONCHI}\par
+    \textbf{DJONGO}\par
+    \vspace{1cm}
+    \today\par
+    \vfill
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\section{}
+
+
+\section{Notes}
+\textbf{organisme de transport:}
+tout organisme ayant besoin de notre application,les autres modules du projet.
+
+\section{Remarques}
+
+- Etudier les horaires d'ouverture des points
+
+\end{document}
+%--------------------------///  ////-----------------------------------

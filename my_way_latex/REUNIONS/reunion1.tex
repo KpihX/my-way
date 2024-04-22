@@ -1,0 +1,218 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum} % Package used to generate dummy text
+\usepackage{tocloft} % Package used to format table of contents
+\usepackage{titlesec} % Package used to format titles
+\usepackage{geometry} % Package used to adjust page layout
+
+% Formatting titles
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Formatting table of contents
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsubsecfont}{\normalfont}
+\renewcommand{\cftsubsubsecpagefont}{\normalfont}
+
+% Adjusting page layout
+\geometry{margin=1in} % Set 1-inch margins
+
+\title{Rapport de Réunion de Groupe}
+\author{NOMO \and KAMDEM \and DONCHI \and DJONGO}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    \Large\textbf{Cours de Réseaux Informatiques}\par
+    \vspace{0.5cm}
+    \Large\textbf{Projet : My-Way}\par
+    \vspace{0.5cm}
+    \Large\textbf{Un outil efficace pour la gestion et le parcours d'itinéraires}\par
+    \vspace{1cm}
+    \textbf{Superviseurs : [Nom du superviseur 1], [Nom du superviseur 2]}\par
+    \vspace{1cm}
+    \Large\textbf{Rapport de Première Réunion de Groupe}\par
+    \vspace{1cm}
+    \textbf{NOMO}\par
+    \textbf{KAMDEM}\par
+    \textbf{DONCHI}\par
+    \textbf{DJONGO}\par
+    \vspace{1cm}
+    \today\par
+    \vfill
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+
+\section{Introduction}
+Cette réunion de groupe s'est tenue le Vendredi 15 Mars 2024 avec pour objectifs de prendre connaissance du projet qui nous est assigné et établir un plan de travail. L'ordre du jour comprenait plusieurs points importants à aborder pour assurer la progression efficace du projet, points qui seront détaillés dans la suite du document.
+
+\section{Prise de Contact et Connaissance du Projet}
+\subsection{Prise de Contact}
+La reunion debute a 13h30 avec presence de tous les membres et dure 2h.
+
+\subsection{Connaissance du Projet}
+De facon claire,notre projet consiste a resourdre le probleme de parcours d'itineraire,de parcours d'un chemin et d'implementer notre solution en produisant une interface graphique conviviale permettant de la tester.
+Pour y arriver,nous commencerons par une etude statistique du probleme,sa modelisation mathematique,une modelisation orientee objet et une implementation produisant une page web permettant de tester la solution.\\
+Durant ce processus,nous nous servirons de plusieurs outils mathematiques et informatiques tels que la theorie des graphes,des API comme google Map et openstreatmap et tacherons d'observer les olutions existantes et de les ameliorer.
+
+\newpage
+%--------------------------///  ////-----------------------------------
+\section{Plannification}
+Nous avons prevu terminer le projet en 8 semaines de travail ou du moins d'avancee majeure.\\
+La planning de realisation de notre pojet se caracterise par des objectifs hebdomadaires,cites dans les lignes suivantes:
+
+\subsection{Semaine 1}
+\begin{enumerate}
+    \item developper les differents points de la consigne donnee par le prof jusqu'a la modelisation mathematique
+    
+    \item Commencer la mise en place du cahier de charges.
+    \textbf{Nous produirons 2 cahiers,un cahier formel pour n'importe quel lecteur et un cahier technique .}
+    
+\end{enumerate}
+
+
+%--------------------------///  ////-----------------------------------
+
+
+\subsection{Semaine 2}
+\begin{enumerate}
+    \item Terminer le cahier de charges.
+    \item decouvrir l'outil \textbf{draw.io} pour lka modelisation \textbf{UML}.
+    \item Integrer les remarques du prof pour l'avancee actuelle.
+\end{enumerate}
+
+
+%--------------------------///  ////-----------------------------------
+
+
+\subsection{Semaine 3}
+\begin{enumerate}
+    \item TErminer la modelisation UML du projet.
+    
+    \item Presentation de nos recherches sur les bibliotheques pour les graphes,notamment la bibliotheque python communiquee par KAMDEM. 
+  
+\end{enumerate}
+
+
+%--------------------------///  ////-----------------------------------
+
+
+\subsection{Semaine 4}
+\begin{enumerate}
+    \item Ameliorer et API googleMap et OPenStreetMap
+    \item Definir le design graphique de notre solution WEb
+    
+\end{enumerate}
+
+
+%--------------------------///  ////-----------------------------------
+\subsection{Semaine 5}
+\begin{enumerate}
+    \item presenter le prototype de notre solution(rendu du design a l'aide 'un outil de design comme figma ou photoshop). 
+    \item E
+    \item effectuer le bilan de la conception.
+\end{enumerate}
+
+
+%--------------------------///  ////-----------------------------------
+\subsection{Semaine 6}
+\begin{enumerate}
+    \item terminer de coder l'interface graphique de notre site
+    \item etablir la communication avec l'API existante choisie(googleMap ou openStreetMap)
+     
+\end{enumerate}
+
+
+%--------------------------///  ////-----------------------------------
+\subsection{Semaine 7}
+\begin{enumerate}
+    \item Tests de notre premiere version du site
+    \item conception de notre propre API
+    
+\end{enumerate}
+
+
+%--------------------------///  ////-----------------------------------
+\subsection{Semaine 8}
+\begin{enumerate}
+    \item conception de notre propre API 
+    \item etablissement de la communication avec les autres modules,en particulier le module \textbf{collecte des clients}
+    \item finalisation de notre solution
+    
+\end{enumerate}
+\newpage
+%--------------------------///  ////-----------------------------------
+\section{ORGANISATION DU TRAVAIL}
+
+\subsection{Conseils generaux}
+\begin{enumerate}
+    \item produire une solution innovante
+    \item ne pas se deconnecter du Cameroon
+    \item contextualier le projet
+    \item promouvoir la communication au sein du groupe
+ 
+    \item utiliser un \textbf{Workspace} de msedge pour faciliter la communication
+    \item faire le rendu ecrit de chaque seance aux membres et au prof
+    \item apprendre github sur openClassroom
+\end{enumerate}
+
+\subsection{Regles}
+   \begin{enumerate}
+      \item livrer ses taches chaque semaine a tout prix
+        \item  la ponctualite est de rigueur,chaque seance se tenant le vendredi a 13h
+  
+   \end{enumerate}
+   
+ 
+\subsection{Taches}
+
+\subsection{premieres taches effectuees}
+\begin{enumerate}
+    \item creer un rfepot github
+      \item  creer un workspace
+        \item  creer un compte jira pour la gestion des taches
+          \item  faire le compte rendu de cette reunion
+\end{enumerate}
+\section{Suivi Du prof}
+
+\subsection{Remarques suites a la reunion 1}
+\begin{enumerate}
+\item  travailler de facon methodique
+    
+\item commencer par identifier le probleme a resourdre et bien le formaliser
+\item  se concentrer sur les points suivants:
+        \begin{itemize}
+            \item comment construire un graphe?
+            \item  quel est le meilleur algorithme de parcours
+            \item  comment rendre un point sommet visible/invisible?
+            \item  comment lier l'infrastructure au consommateur?
+        \end{itemize}
+\item faire le bilan des metriques sur une arrete \textbf{ex:} distance,temps,surcharge,somme,monnaie...
+\item observer le concept de metrique composee
+\item obsever le concept de logique floue
+
+\end{enumerate}
+
+\subsection{Decisions generales}
+Nous devons voir le prof chaque semaine pour lui faire constater l 'avancee actuelle de notre projet.
+%--------------------------///  ////-----------------------------------
+
+\section{Conclusion}
+
+La réunion a été fructueuse et a permis de prendre des décisions importantes pour le projet. Il est crucial que chaque membre du groupe prenne en charge les tâches qui lui ont été assignées afin d'assurer une progression efficace. Nous nous engageons à respecter les délais fixés et à communiquer régulièrement pour assurer le bon déroulement du projet.
+
+\end{document}
+%--------------------------///  ////-----------------------------------

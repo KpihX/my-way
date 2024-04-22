@@ -1,0 +1,231 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{BM02b}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=68b9b68519e1cdfab90dd2d402345205}{%
+           family={Bos},
+           familyi={B\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=9bedf57f3b510d0e10e75bc4f8f95828}{%
+           family={Mauw},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{fullhash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{bibnamehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{authorbibnamehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{authornamehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{authorfullhash}{72ca6ea16e05abff5966e60e34299fcf}
+      \field{extraname}{1}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Included in MSC macro package distribution}
+      \field{title}{A {\LaTeX{}} macro package for Message Sequence Charts---Maintenance document---Describing {\mscpack} version~{\mscversion}}
+      \field{year}{2002}
+      \true{nocite}
+    \endentry
+    \entry{BM02}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=68b9b68519e1cdfab90dd2d402345205}{%
+           family={Bos},
+           familyi={B\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=9bedf57f3b510d0e10e75bc4f8f95828}{%
+           family={Mauw},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{fullhash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{bibnamehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{authorbibnamehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{authornamehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{authorfullhash}{72ca6ea16e05abff5966e60e34299fcf}
+      \field{extraname}{2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Included in MSC macro package distribution}
+      \field{title}{A {\LaTeX{}} macro package for Message Sequence Charts---Reference Manual---Describing {\mscpack} version~{\mscversion}}
+      \field{year}{2002}
+      \true{nocite}
+    \endentry
+    \entry{BM02a}{manual}{}
+      \name{author}{2}{}{%
+        {{hash=68b9b68519e1cdfab90dd2d402345205}{%
+           family={Bos},
+           familyi={B\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=9bedf57f3b510d0e10e75bc4f8f95828}{%
+           family={Mauw},
+           familyi={M\bibinitperiod},
+           given={S.},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{fullhash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{bibnamehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{authorbibnamehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{authornamehash}{72ca6ea16e05abff5966e60e34299fcf}
+      \strng{authorfullhash}{72ca6ea16e05abff5966e60e34299fcf}
+      \field{extraname}{3}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Included in MSC macro package distribution}
+      \field{title}{A {\LaTeX{}} macro package for Message Sequence Charts---User Manual---Describing {\mscpack} version~{\mscversion}}
+      \field{year}{2002}
+      \true{nocite}
+    \endentry
+    \entry{GSM97}{book}{}
+      \name{author}{3}{}{%
+        {{hash=0743efb276e9219ee664a9b3dbd60619}{%
+           family={Goossens},
+           familyi={G\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+        {{hash=22439d3b66be376e3f27270d8d300c89}{%
+           family={Rahtz},
+           familyi={R\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+        {{hash=9355edd511e3f6fdd880ee98722a53fb}{%
+           family={Mittelbach},
+           familyi={M\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{e0fe5244f7bd4501ecba8372b6fdd95b}
+      \strng{fullhash}{e0fe5244f7bd4501ecba8372b6fdd95b}
+      \strng{bibnamehash}{e0fe5244f7bd4501ecba8372b6fdd95b}
+      \strng{authorbibnamehash}{e0fe5244f7bd4501ecba8372b6fdd95b}
+      \strng{authornamehash}{e0fe5244f7bd4501ecba8372b6fdd95b}
+      \strng{authorfullhash}{e0fe5244f7bd4501ecba8372b6fdd95b}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{T}he {\LaTeX} {G}raphics {C}ompanion}
+      \field{year}{1997}
+      \true{nocite}
+    \endentry
+    \entry{z120}{booklet}{}
+      \name{author}{1}{}{%
+        {{hash=0d937129e1e7e781ed0eeb5955e051d8}{%
+           family={ITU-TS},
+           familyi={I\bibinithyphendelim T\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Geneva}%
+      }
+      \strng{namehash}{0d937129e1e7e781ed0eeb5955e051d8}
+      \strng{fullhash}{0d937129e1e7e781ed0eeb5955e051d8}
+      \strng{bibnamehash}{0d937129e1e7e781ed0eeb5955e051d8}
+      \strng{authorbibnamehash}{0d937129e1e7e781ed0eeb5955e051d8}
+      \strng{authornamehash}{0d937129e1e7e781ed0eeb5955e051d8}
+      \strng{authorfullhash}{0d937129e1e7e781ed0eeb5955e051d8}
+      \field{sortinit}{I}
+      \field{sortinithash}{8d291c51ee89b6cd86bf5379f0b151d8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{{ITU-TS} {R}ecommendation {Z.120}: {M}essage {S}equence {C}hart {(MSC)}}
+      \field{year}{1997}
+      \true{nocite}
+    \endentry
+    \entry{Lam94}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ef82223e035dbb62f84cb1c0782df38c}{%
+           family={Lamport},
+           familyi={L\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Adsison-Wesley}%
+      }
+      \strng{namehash}{ef82223e035dbb62f84cb1c0782df38c}
+      \strng{fullhash}{ef82223e035dbb62f84cb1c0782df38c}
+      \strng{bibnamehash}{ef82223e035dbb62f84cb1c0782df38c}
+      \strng{authorbibnamehash}{ef82223e035dbb62f84cb1c0782df38c}
+      \strng{authornamehash}{ef82223e035dbb62f84cb1c0782df38c}
+      \strng{authorfullhash}{ef82223e035dbb62f84cb1c0782df38c}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{2nd}
+      \field{note}{Updated for {\LaTeXe}}
+      \field{title}{{\LaTeX}---A Document Preparation System---User's Guide and Reference Manual}
+      \field{year}{1994}
+      \true{nocite}
+    \endentry
+    \entry{RudolphGrabowskiGraubmann96}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=782d48ed915b5d4acdc61a6fb806c952}{%
+           family={Rudolph},
+           familyi={R\bibinitperiod},
+           given={E.},
+           giveni={E\bibinitperiod}}}%
+        {{hash=a1cd1b88c7270e0f735c5507cb5a831d}{%
+           family={P.Graubmann},
+           familyi={P\bibinitperiod}}}%
+        {{hash=a93d115c4a64e71dcb1dac9dfed1cdd7}{%
+           family={Grabowski},
+           familyi={G\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{af2a83b01e067e2b03314f5760f48c73}
+      \strng{fullhash}{af2a83b01e067e2b03314f5760f48c73}
+      \strng{bibnamehash}{af2a83b01e067e2b03314f5760f48c73}
+      \strng{authorbibnamehash}{af2a83b01e067e2b03314f5760f48c73}
+      \strng{authornamehash}{af2a83b01e067e2b03314f5760f48c73}
+      \strng{authorfullhash}{af2a83b01e067e2b03314f5760f48c73}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{FORTE}
+      \field{title}{Tutorial on Message Sequence Charts {(MSC'96})}
+      \field{year}{1996}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

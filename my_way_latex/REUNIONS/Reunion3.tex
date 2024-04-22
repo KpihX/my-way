@@ -1,0 +1,140 @@
+\documentclass[12px]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum} % Package used to generate dummy text
+\usepackage{tocloft} % Package used to format table of contents
+\usepackage{titlesec} % Package used to format titles
+\usepackage{geometry} % Package used to adjust page layout
+
+% Formatting titles
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% Formatting table of contents
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsubsecfont}{\normalfont}
+\renewcommand{\cftsubsubsecpagefont}{\normalfont}
+
+% Adjusting page layout
+\geometry{margin=1in} % Set 1-inch margins
+
+\title{Rapport de Réunion de Groupe}
+\author{DJONGO Ariel\and DONCHI Tresor \and KAMDEM Ivann \and NOMO Gabriel}
+\date{\today}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{1cm}
+    \Large\textbf{Cours de Réseaux Informatiques}\par
+    \vspace{0.5cm}
+    \Large\textbf{Projet : My-Way}\par
+    \vspace{0.5cm}
+    \Large\textbf{\textit{Un outil efficace pour la gestion et le parcours d'itinéraires}}\par
+    \vspace{1cm}
+    \vspace{1cm}
+    \Large\textbf{Rapport de Quatrième Réunion de Groupe}\par
+    \vspace{1cm}
+    \textit{Réalisé par les étudiants:\\}
+    \textbf{DJONGO Ariel}\par
+    \textbf{DONCHI Tresor}\par
+    \textbf{KAMDEM Ivann}\par
+    \textbf{NOMO Gabriel}\par
+    \vspace{0.6cm}\par
+    \textbf{3 GI\\}
+    \vspace{0.4cm}
+    \textit{Sous la supervision de:\\}
+    \textbf{Pr Thomas DJOTIO}\par
+    \textbf{Mr Juslin KUTCHE}\par
+    \vspace{6cm}
+    \today\par
+    \vfill
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+
+\section{Introduction}
+Dans le but de respecter le processus d'évolution fixé à l'entame du projet, une réunion de mise au point s'est tenue le \textit{Vendredi, 05 Avril 2024} dans la salle B-34B au BP1 de l'ENSPY.
+Le bilan de cette réunion est présenté dans ce document.
+
+\newpage
+\section{Circonstances}
+\begin{itemize}
+    \item \textbf{Heure de début fixée:} \textit{13:00}
+    \item \textbf{Heure de début effective:} \textit{13:10}
+    \item \textbf{Présence:} \textit{Tous les quatre membres étaient présents.}
+    \item \textbf{Heure de fin:} \textit{16:32}
+\end{itemize}
+%--------------------------///  ////-----------------------------------
+\section{Première partie: Concertation des membres}
+Au tout début de notre réunion, nous avons premièrement rappelés les objectifs de celle-ci.
+Puis, nous avons commencé par le premier sujet: L'initiation à la communication avec l'API OpenStreetMap. L'opération a été plus ou moins bien accomplie, mais il en est ressorti que nous devrions y faire plus de recherches.
+Le second sujet était la finalisation de notre modèle de classes. Il s'en est suivi les modifications suivantes:
+\begin{itemize}
+    \item \textbf{Modèle de contexte:}
+    \begin{itemize}
+        \item \textit{Retrait de usager et conducteur (car ses deux clients avaient trop peu de points de dissemblance) et ajout de Client}
+    \end{itemize}
+    \item \textbf{Modèle de classes:}
+    \begin{itemize}
+        \item Classe \textbf{\textit{Usager}}: \textbf{\textit{Supprimée}} (La similarité avec Conducteur dans notre modélisation était trop forte)
+        \item Ajout de la classe \textbf{\textit{Particulier}}: personne capable de réserver une route
+        \item Création des interfaces \textbf{\textit{Displayable}} pour les objets "\textit{affichables sur les cartes}" et \textbf{\textit{CostEvaluation}}
+        \item Création de l'interface \textbf{\textit{GraphUtils}} qui ne contiendra que pour un début les algorithmes de parcours des graphes.
+    \end{itemize}
+\end{itemize}
+
+C'est après s'être mis d'accord sur ces modifications, nous avons décidé de nous rendre dans le bureau de l'enseignant: il était alors 16:02.
+
+\section{Deuxième partie: Rencontre avec le Pr DJOTIO}
+Pendant et après la présentation de notre modélisation au Pr DJOTIO, dans son bureau, il nous a fourni bon nombre de remarques et commentaires.
+\begin{itemize}
+    \item \textbf{Modèle de contexte}
+    \begin{itemize}
+        \item Ajouter Syndicat comme acteur en tant que celui qui autorise ou non un utilisateur à utiliser l'application (acteur secondaire) et retirer plate-forme
+        \item Discriminer les types d'utilisateurs:(conducteur ou non, véhiculé ou non)
+        \begin{itemize}
+            \item exemple sans véhicule: personnel, client lambda....
+            \item se concentrer sur les chauffeurs indépendant (s'enregistrer, définir ses itinéraires)
+        \end{itemize}
+    \end{itemize}
+    \item \textbf{Modèle de package}
+    \begin{itemize}
+        \item Ajout du module de gestion des identités
+    \end{itemize}
+    \item \textbf{Modèle de classe}
+    \begin{itemize}
+        \item Enregistrer les mots-clés et photo de profil pour un user
+    \end{itemize}
+    \item \textbf{Autres}
+    \begin{itemize}
+        \item Statistiques générales de trafic sur les itinéraires à Yaoundé.
+        \item Il est à noter que nous avons demander à l'enseignant les codes sources pour la communication avec l'API d'OSM, mais il n'a pas pu nous le fournir. Cependant, il a assuré qu'il les cherchera et nous les fournira dès lors.
+    \end{itemize}
+\end{itemize}
+\section{Planification de la prochaine réunion:}
+Elle est prévue pour le \textit{Dimanche, 07 Avril 2024} dès \textit{08h00} par un \textit{meet Google.}
+Les tâches à réaliser avant cette échéance sont réparties comme suit:
+\begin{itemize}
+    \item \textbf{\textit{Un cahier d'analyse et de conception}} à la charge de \textit{KAMDEM} et \textit{NOMO}.
+    \item \textit{\textbf{Un cahier de charges}} à la charge de \textit{DJONGO} et \textit{DONCHI}.
+    \item Les statistiques 
+\end{itemize}
+Nous devons également faire davantage de recherches sur la communication avec l'API JS d'OpenStreetMap.
+Au cours de cette réunion, nous réviserons les réalisations de chacun et planifierons une éventuelle évaluation de notre projet lundi.
+\newpage
+
+\section{Conclusion}
+En définitive, le bilan de cette réunion est positif. Elle nous a permis de nous poser sur l'évolution globale de notre projet et à prévoir les actions futures. La prochaine réunion a été fixée d'un commun accord. Nous espérons que nous respecterons à la lettre cet engagement..
+
+\end{document}
+%--------------------------///  ////-----------------------------------
