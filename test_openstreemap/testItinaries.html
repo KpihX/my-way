@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Carte OpenStreetMap avec Leaflet</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Inclure la feuille de style Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    
+    <!-- Inclure la bibliothèque JavaScript Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    
+    <!-- Inclure la bibliothèque de routage pour Leaflet -->
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+</head>
+<body>
+    <div id="map" style="width: 600px; height: 400px;"></div>
+    <button id="bestPath">Meilleur chemin</button>
+
+    <script>
+        // Coordonnées de Yaoundé
+        var yaounde = [3.848, 11.502];
+        var waypoints = []; // Variable pour stocker les points de routage
+
+        // Initialiser la carte sans centre défini
+        var map = L.map('map');
+
+        // Charger et afficher la couche de tuiles OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Initialiser le contrôleur de routage
+        var control = L.Routing.control({
+            // Utiliser le service de routage d'OpenStreetMap
+            router: L.Routing.osrmv1({
+                serviceUrl: 'https://router.project-osrm.org/route/v1'
+            }),
+            // Activer la sélection de l'itinéraire par clic sur la carte
+            routeWhileDragging: true
+        }).addTo(map);
+
+        // Gérer les clics sur la carte pour ajouter des points de routage
+        map.on('click', function(e) {
+            if (waypoints.length < 2) {
+                waypoints.push(e.latlng);
+                control.spliceWaypoints(control.getWaypoints().length, 0, e.latlng);
+            }
+        });
+
+        
+
+        // Essayer de centrer la carte sur la position de l'utilisateur
+        map.locate({setView: true, maxZoom: 16});
+
+        // Si la géolocalisation échoue, centrer la carte sur Yaoundé
+        map.on('locationerror', function() {
+            map.setView(yaounde, 13);
+        });
+
+
+        // Ajouter la fonction pour calculer l'itinéraire
+        function calculateRoute() {
+            if (waypoints.length === 2) {
+                // Construire l'URL de la requête pour OpenRouteService
+                var orsDirectionsUrl = 'https://api.openrouteservice.org/v2/directions/driving-car?api_key=' + '5b3ce3597851110001cf62487ddb1d6fc58545ce8d7285a2c5c98fd4' + '&start=' + waypoints[0].lng + ',' + waypoints[0].lat + '&end=' + waypoints[1].lng + ',' + waypoints[1].lat;
+
+                // Faire la requête à OpenRouteService
+                fetch(orsDirectionsUrl)
+                    .then(function(response) {
+                        return response.json();
+                    })
+                    .then(function(json) {
+                        if (json.features && json.features.length > 0) {
+                            // Récupérer la géométrie de l'itinéraire
+                            var routeGeometry = json.features[0].geometry;
+
+                            // Afficher l'itinéraire sur la carte
+                            var routeLine = L.polyline(L.GeoJSON.coordsToLatLngs(routeGeometry.coordinates), {
+                                color: 'blue',
+                                weight: 5,
+                                opacity: 0.7
+                            }).addTo(map);
+
+                            // Centrer la carte sur l'itinéraire
+                            map.fitBounds(routeLine.getBounds());
+                        }
+                    })
+                    .catch(function(error) {
+                        console.error('Erreur lors de la récupération de l\'itinéraire', error);
+                    });
+            } else {
+                alert('Veuillez sélectionner deux points sur la carte.');
+            }
+        }
+
+        // Modifier le gestionnaire de clic pour le bouton "Meilleur chemin"
+        document.getElementById('bestPath').addEventListener('click', function() {
+            // Calculer la distance comme avant
+            if (waypoints.length === 2) {
+                var distance = L.latLng(waypoints[0]).distanceTo(L.latLng(waypoints[1]));
+                alert('Point A: ' + waypoints[0] + '\nPoint B: ' + waypoints[1] + '\nDistance: ' + distance.toFixed(2) + ' mètres');
+            }
+            // Calculer et afficher l'itinéraire
+            calculateRoute();
+        });
+    </script>
+</body>
+</html>
