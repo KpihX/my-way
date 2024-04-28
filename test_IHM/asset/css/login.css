@@ -1,0 +1,83 @@
+/* GENERAL */
+:root {
+    --main-color--: blue;
+    --secondary--color: green;
+    --third-color: orange;
+    --bg-button-bgcolor--: black;
+    --bg-button-color--: blueviolet;
+}
+
+body {
+
+    
+    background-size: cover;
+    background-position: center;
+}
+
+.mybtn:hover{
+    background-color: var(--bg-button-bgcolor--);
+    color: var(--bg-button-color--);
+}
+
+/* NAVBAR */
+.nav-item img {
+    max-width: 500%; /* Ajustez cette valeur selon la taille souhaitée de l'image */
+    height: auto;
+}
+
+nav .search-form {
+    display: flex;
+    justify-content: flex-end; /* Ajustement de l'alignement du formulaire */
+}
+
+.navbar-brand img {
+    max-width: 18%; /* Ajustez cette valeur selon la taille souhaitée de l'image */
+    height: auto;
+}
+
+.navbar-nav {
+    margin-left: auto; /* Alignement automatique des éléments vers la droite */
+    margin-right: 20px;
+}
+/* Conteneur pour le profil dans la navbar */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments verticalement */
+}
+
+.profile-container img {
+    min-width: 5%;
+    max-width: 15%; /* Ajustez cette valeur selon vos préférences */
+    height: auto;
+}
+
+.profile-container small {
+    margin-top: 5px; /* Ajoute un espace entre l'image et le nom */
+    color: white; /* Gardez la couleur du texte blanche */
+}
+
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 8px;
+}
+/* Assure que le contenu occupe toute la hauteur de la page */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Met le container principal (votre formulaire) à flex-grow pour occuper l'espace disponible */
+.container {
+    flex-grow: 1;
+}
+
+/* Place le footer en bas de la page */
+.myfooter {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,123 @@
+/* General */
+:root {
+    --main-color--: blue;
+    --secondary--color: green;
+    --third-color: orange;
+    --bg-button-bgcolor--: black;
+    --bg-button-color--: blueviolet;
+}
+.mybtn:hover{
+    background-color: var(--bg-button-bgcolor--);
+    color: var(--bg-button-color--);
+}
+
+img{
+    height: 50px;
+    width: auto;
+}
+
+/* Heading */
+
+.myHeader{
+    height: 150px;
+}
+
+        /* Heading-Navbar */
+.myHeader .myNavbar{
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+/* .myHeader .myNavbar .navbar{
+    background-color: rgba(0, 0, 255, 0.466);
+} */
+.myHeader .myNavbar .navbar a img{
+    margin-left: 40px;
+}
+.myHeader .myNavbar .navbar-collapse{
+    margin-right: 40px;
+    text-align: left;
+}
+.myHeader .myNavbar .navbar-collapse .nav-item{
+    margin-right: 20px;
+}
+
+.myHeader .myNavbar .navbar-collapse .nav-item a h5{
+    font-weight: bold;
+    color: black;
+}
+.myHeader .myNavbar .navbar-collapse .nav-item a h5:hover{
+    color: white;
+}
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a {
+    
+    text-decoration: none;
+}
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a :hover{
+    color: white;
+}
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a small{
+    font-weight: bold;
+    color: black;
+    font-size: 10px;
+    margin-left: 70px;
+}
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a small:hover{
+    color: white;
+}
+
+        /* Heading-Nav */
+.myHeader .myNav{
+    height: 60px;
+    margin-top: 20px;
+}
+.myHeader .myNav .d-flex {
+    position: fixed;
+    margin-left: 30%;
+}
+
+.myHeader .myNav .d-flex .myFlex{
+    margin-left: 30px;
+}
+.myHeader .myNav .d-flex .active{
+    background-color: blue;
+}
+.myHeader .myNav .d-flex .myFlex:hover{
+    color: blue;
+    background-color: black;
+}
+
+
+
+/* Body */
+    .item{
+        margin-top: 30px;
+    }
+
+        /* Body settings */
+        .myBody .seettings{
+            margin-top:50px;
+        }
+        .myBody .seettings .container .btn{
+            margin-left: 40%;
+            color: white;
+            font-weight: bold;
+        }
+        .myBody .seettings .container .btn:hover{
+            background-color: black;
+            color: blue;
+        }
+
+        /* Body  itirenaries*/
+        .myBody .itineraries{
+            margin-top:50px;
+        }
+
+        /* Body  places*/
+        .myBody .places{
+            margin-top:50px;
+        }
+
+
+
+/* Footer */

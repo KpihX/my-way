@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte de Yaoundé</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Leaflet CSS for the map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+    <link rel="stylesheet" href="asset/css/Map.css">
+</head>
+
+<body>
+        <!-- NAVBAR -->
+        <section class="navbar navbar-container">
+            <header>
+                <nav class="navbar navbar-1 navbar-expand-md navbar-dark fixed-top bg-primary" >
+                    <a class="navbar-brand" href="index.html">
+                        <img src="/asset/images/logo.jpeg" alt="logo" class="rounded-circle">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav ml-auto">
+                            <!-- Formulaire de recherche -->
+                            <form class="form-inline mt-2 mt-md-0 search-form">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un lieu" aria-label="Search">
+                                <button class="btn btn-success mybtn" type="submit">Search</button>
+                            </form>
+    
+                            <!-- Menu de navigation -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html"><h5>Home</h5></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="Map.html"><h5>Map</h5> <span class="sr-only">(current)</span></a>
+                            </li>
+
+                            <li class="nav-item">
+                                <div class="profile-container">
+                                  <a href="profile.html">
+                                    <img src="/asset/images/ppgaby.jpg" alt="you" class="rounded-circle" width="30" height="30">
+                                    <small style="color: white">Gabriel</small>
+                                  </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header> 
+            <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-2">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- Groupe les boutons pour zoomer et dézoomer dans un div avec la classe me-auto -->
+                    <ul class="navbar me-auto">
+                        <li class="nav-item">
+                            <button class="btn btn-info mybtn">zoomer</button>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-info mybtn">dezoomer</button>
+                        </li>
+                    </ul>
+                    <!-- Conserve le bouton Menu à droite -->
+                    <button class="btn btn-success mybtn" id="menuButton">Rechercher un itineraire</button>
+                </div>
+            </nav>
+        
+        </section>
+
+    
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <h5>Parametres de l'itineraire</h5>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Depart</label>
+                <input type="text" class="form-control" id="startpoint" placeholder="Your location" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Arrivee</label>
+                <input type="email" class="form-control" id="destination" placeholder="Your destination"required>
+            </div>
+            <div class="mb-3">
+                <ul>
+                        <label for="email" class="form-label">Lieux d'escale</label>
+                        <input type="email" class="form-control" id="lieu1" placeholder="lieu1">
+                        <input type="email" class="form-control" id="lieu2" placeholder="lieu2">
+                        <input type="email" class="form-control" id="lieu3" placeholder="lieu3">
+                    
+                </ul>
+            </div>
+            <div class="btn-valid">
+            <button type="submit" class="btn btn-success mybtn">Le meilleur itineraire?</button>
+            <button type="submit" class="btn btn-success mybtn">Les meilleur itineraires?</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Body with the map -->
+    <div class="container mt-4">
+        <div id="map"></div>
+    </div>
+
+       <!-- Footer -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Section À propos de nous -->
+            <div class="col-md-6">
+                <h5>À propos de nous</h5>
+                <p>Nous sommes une plateforme dédiée à l'organisation et à l'optimisation de vos voyages. Notre équipe travaille sans relâche pour vous offrir des itinéraires sur mesure, des recommandations locales et un suivi en temps réel pour que vous puissiez voyager en toute sérénité.</p>
+            </div>
+  
+            <!-- Section Nous contacter -->
+            <div class="col-md-6">
+                <h5>Nous contacter</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt"></i> Adresse: enspy, Yaounde</li>
+                    <li><i class="fas fa-phone"></i> Téléphone: +237 620 86 47 61</li>
+                    <li><i class="fas fa-envelope"></i> Email: contact@myway.com</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Leaflet JS for the map -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="asset/js/Map.js"></script>
+</body>
+
+</html>

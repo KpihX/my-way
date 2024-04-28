@@ -1,0 +1,43 @@
+/* CAROSSEL */
+main{
+    align-items: center;
+    margin-top: 60px;
+    width: 100%;
+}
+
+/* Carrousel - styles pour les contrôles du carrousel */
+.carousel-control-prev,
+.carousel-control-next {
+    background-color:rgba(255, 217, 0, 0.253); /* Couleur de fond des boutons de défilement à rouge */
+    opacity: 0.5; /* Opacité pour éviter qu'ils ne soient trop distrayants */
+}
+
+
+/* Carrousel - styles pour les images */
+.slide img {
+    width: 100%; /* Les images prennent toute la largeur du carrousel */
+    height: 600px; /* Limite la hauteur des images à 300px */
+    object-fit: cover; /* Permet à l'image de s'ajuster en fonction de la taille du conteneur tout en conservant le ratio d'aspect */
+}
+
+
+/* Carrousel - styles pour les légendes */
+.carousel-caption {
+    text-align: left; /* Centre le texte de la légende */
+    width: 100%; /* La légende prend toute la largeur du carrousel */
+    position: absolute; /* Gardez la légende en position absolue par rapport à l'image */
+    bottom: 40%; /* Espace entre la légende et le bas de l'image */
+    background-color: rgba(0, 0, 0, 0.185); /* Fond semi-transparent pour la légende */
+    padding: 10px; /* Ajoutez un peu de padding pour un meilleur espacement */
+}
+
+/* Carrousel - style pour le titre */
+.carousel-caption h1 {
+    color: white; /* Titre de couleur blueviolet */
+}
+/* Carrousel - styles pour les légendes */
+
+
+.carousel-item{
+    padding-top:1%;
+}

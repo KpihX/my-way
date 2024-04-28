@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template My-Way</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/asset/css/map.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <section class="navbar">
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
+                <a class="navbar-brand" href="#">
+                    <img src="/asset/images/logo.jpeg" alt="logo" class="rounded-circle">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Formulaire de recherche -->
+                        <form class="form-inline mt-2 mt-md-0 search-form">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-success my-2 my-sm-0 mybtn" type="submit">Search</button>
+                        </form>
+
+                        <!-- Menu de navigation -->
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html"><h5>Home</h5> <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="Map.html"><h5>Map</h5></a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="profile-container">
+                                <img src="/asset/images/ppgaby.jpg" alt="you" class="rounded-circle" width="30" height="30">
+                                <small style="color: white">Gabriel</small>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </section>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">MonSite</a>
+        <div class="navbar-nav mr-auto">
+            <button class="btn btn-primary mx-2" id="btn1">Bouton 1</button>
+            <button class="btn btn-secondary mx-2" id="btn2">Bouton 2</button>
+        </div>
+        <button class="btn btn-outline-dark ml-auto" id="menuButton">Menu</button>
+    </nav>
+    
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+        <form>
+            <div class="form-group">
+                <label for="inputEmail">Email</label>
+                <input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="inputPassword">Password</label>
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+        <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Section À propos de nous -->
+                <div class="col-md-6">
+                    <h5>À propos de nous</h5>
+                    <p>Nous sommes une plateforme dédiée à l'organisation et à l'optimisation de vos voyages. Notre équipe travaille sans relâche pour vous offrir des itinéraires sur mesure, des recommandations locales et un suivi en temps réel pour que vous puissiez voyager en toute sérénité.</p>
+                </div>
+
+                <!-- Section Nous contacter -->
+                <div class="col-md-6">
+                    <h5>Nous contacter</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt"></i> Adresse: enspy, Yaounde</li>
+                        <li><i class="fas fa-phone"></i> Téléphone: +237 620 86 47 61</li>
+                        <li><i class="fas fa-envelope"></i> Email: contact@myway.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="/asset/js/map.js"></script>
+</body>
+
+</html>

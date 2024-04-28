@@ -1,0 +1,130 @@
+/* GENERAL */
+:root {
+    --main-color--: blue;
+    --secondary--color: green;
+    --third-color: orange;
+    --bg-button-bgcolor--: black;
+    --bg-button-color--: blueviolet;
+    --bg-gray--:gray;
+}
+.mybtn:hover{
+    background-color: var(--bg-button-bgcolor--);
+    color: var(--bg-button-color--);
+}
+body{
+    background-color: var(--bg-gray--);
+}
+
+/* NAVBAR */
+.navbar-container{
+    height: 80px;
+}
+
+/* navbar-1 */
+.navbar-1{
+    height: 70px;
+}
+.nav-item {
+    margin-right: 30px;
+    height: 40px;
+}
+.nav-item img {
+    max-width: 500%; /* Ajustez cette valeur selon la taille souhaitée de l'image */
+    height: auto;
+}
+
+nav .search-form {
+    height: 40%;
+    display: flex;
+}
+nav .search-form input,nav .search-form button{
+    margin-top:10px;
+    height: 40px;
+}
+nav .search-form .mybtn{
+    margin-bottom: -20px;
+    margin-right: 100px;
+}
+
+
+.navbar-brand img {
+    max-width: 18%; /* Ajustez cette valeur selon la taille souhaitée de l'image */
+    height: auto;
+}
+
+.navbar-nav {
+    margin-left: auto; /* Alignement automatique des éléments vers la droite */
+    margin-right: 20px;
+}
+
+/* Conteneur pour le profil dans la navbar */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre les éléments verticalement */
+}
+
+.profile-container img {
+    min-width: 100%;
+    height: auto;
+}
+
+.profile-container small {
+    margin-top: 5px; /* Ajoute un espace entre l'image et le nom */
+    color: white; /* Gardez la couleur du texte blanche */
+}
+
+/* navbar-2 */
+.navbar-2{
+    top: 82px;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+}
+
+.navbar-2 .navbar{
+    display: flex;
+    list-style: none;
+    margin-top: 15px;
+}
+
+.navbar-2 .navbar .nav-item{
+    margin: 10px 20px 10px 20px;
+}
+
+#menuButton{
+    margin-right: 50px;
+}
+/* Map */
+#map {
+    margin-top: 80px;
+    height: 450px;
+    width: 900px;
+}
+
+/* sidebar */
+#sidebar{
+position: fixed;
+right: 0;
+top: 135px;
+height: 100vh;
+width: 300px;
+background-color: white;
+display: none;
+padding: 10px;
+}
+#sidebar .btn-valid {
+    margin-top: -20px;
+}
+#sidebar .btn-valid button{
+    margin-top: 10px;
+}
+
+
+/* Footer */
+footer{
+text-align: center;
+margin-top: 20px;
+width: 100%;
+height: 50px;
+}
