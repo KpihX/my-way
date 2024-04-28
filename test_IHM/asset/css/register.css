@@ -1,63 +1,83 @@
-/* GENERAL */
-:root {
-    --main-color--: blue;
-    --secondary--color: green;
-    --third-color: orange;
-    --bg-button-bgcolor--: black;
-    --bg-button-color--: blueviolet;
+ /* General */
+ :root {
+    --main-color: blue;
+    --secondary-color: green;
+    --bg-button-bgcolor: black;
+    --bg-button-color: blueviolet;
 }
 
-body {
-    background-size: cover;
-    background-position: center;
+.myFlex:hover {
+    background-color: var(--bg-button-bgcolor);
+    color: var(--bg-button-color);
 }
 
-.mybtn:hover{
-    background-color: var(--bg-button-bgcolor--);
-    color: var(--bg-button-color--);
+img {
+    height: 50px;
+    width: auto;
 }
 
-/* NAVBAR */
-.nav-item img {
-    max-width: 500%; /* Ajustez cette valeur selon la taille souhaitée de l'image */
-    height: auto;
+.red {
+    color: red;
 }
 
-nav .search-form {
-    display: flex;
-    justify-content: flex-end; /* Ajustement de l'alignement du formulaire */
+/* Heading */
+.myHeader {
+    height: 150px;
 }
 
-.navbar-brand img {
-    max-width: 18%; /* Ajustez cette valeur selon la taille souhaitée de l'image */
-    height: auto;
+.myHeader .myNavbar {
+    height: 60px;
+    margin-bottom: 10px;
 }
 
-.navbar-nav {
-    margin-left: auto; /* Alignement automatique des éléments vers la droite */
+.myHeader .myNavbar .navbar a img {
+    margin-left: 40px;
+}
+
+.myHeader .myNavbar .navbar-collapse {
+    margin-right: 40px;
+    text-align: left;
+}
+
+.myHeader .myNavbar .navbar-collapse .nav-item {
     margin-right: 20px;
 }
-/* Conteneur pour le profil dans la navbar */
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centre les éléments verticalement */
+
+.myHeader .myNavbar .navbar-collapse .nav-item a h5 {
+    font-weight: bold;
+    color: black;
 }
 
-.profile-container img {
-    min-width: 5%;
-    max-width: 15%; /* Ajustez cette valeur selon vos préférences */
-    height: auto;
+.myHeader .myNavbar .navbar-collapse .nav-item a h5:hover {
+    color: white;
 }
 
-.profile-container small {
-    margin-top: 5px; /* Ajoute un espace entre l'image et le nom */
-    color: white; /* Gardez la couleur du texte blanche */
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a {
+    text-decoration: none;
 }
 
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a:hover {
+    color: white;
+}
 
-.form-container {
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 8px;
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a small {
+    font-weight: bold;
+    color: black;
+    font-size: 10px;
+    margin-left: 70px;
+}
+
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a small:hover {
+    color: white;
+}
+
+/* formulaire */
+.form{
+    margin-top: -100px;
+}
+/* Footer */
+.myFooter {
+    background-color: black;
+    color: white;
+    padding: 5px;
 }

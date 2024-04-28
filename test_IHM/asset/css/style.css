@@ -1,53 +1,79 @@
-/* GENERAL */
-:root {
-    --main-color--: blue;
-    --secondary--color: green;
-    --third-color: orange;
-    --bg-button-bgcolor--: black;
-    --bg-button-color--: blueviolet;
+ /* General */
+ :root {
+    --main-color: blue;
+    --secondary-color: green;
+    --bg-button-bgcolor: black;
+    --bg-button-color: blueviolet;
 }
 
-.mybtn:hover{
-    background-color: var(--bg-button-bgcolor--);
-    color: var(--bg-button-color--);
+.myFlex:hover {
+    background-color: var(--bg-button-bgcolor);
+    color: var(--bg-button-color);
 }
 
-/* NAVBAR */
-.nav-item img {
-    max-width: 500%; /* Ajustez cette valeur selon la taille souhaitée de l'image */
-    height: auto;
+img {
+    height: 50px;
+    width: auto;
 }
 
-nav .search-form {
-    display: flex;
-    justify-content: flex-end; /* Ajustement de l'alignement du formulaire */
+.red {
+    color: red;
 }
 
-.navbar-brand img {
-    max-width: 18%; /* Ajustez cette valeur selon la taille souhaitée de l'image */
-    height: auto;
+.mybutton:hover {
+    color: blueviolet;
+    background-color: black;
 }
 
-.navbar-nav {
-    margin-left: auto; /* Alignement automatique des éléments vers la droite */
+/* Heading */
+.myHeader {
+    height: 150px;
+}
+
+.myHeader .myNavbar {
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.myHeader .myNavbar .navbar a img {
+    margin-left: 40px;
+}
+
+.myHeader .myNavbar .navbar-collapse {
+    margin-right: 40px;
+    text-align: left;
+}
+
+.myHeader .myNavbar .navbar-collapse .nav-item {
     margin-right: 20px;
 }
-/* Conteneur pour le profil dans la navbar */
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centre les éléments verticalement */
+
+.myHeader .myNavbar .navbar-collapse .nav-item a h5 {
+    font-weight: bold;
+    color: black;
 }
 
-.profile-container img {
-    min-width: 5%;
-    max-width: 15%; /* Ajustez cette valeur selon vos préférences */
-    height: auto;
+.myHeader .myNavbar .navbar-collapse .nav-item a h5:hover {
+    color: white;
 }
 
-.profile-container small {
-    margin-top: 5px; /* Ajoute un espace entre l'image et le nom */
-    color: white; /* Gardez la couleur du texte blanche */
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a {
+    text-decoration: none;
+}
+
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a:hover {
+    color: white;
+}
+
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a small {
+    font-weight: bold;
+    color: black;
+    font-size: 10px;
+    margin-left: 70px;
+}
+
+.myHeader .myNavbar .navbar-collapse .nav-item .profile-container a small:hover {
+    color: white;
 }
 
 
@@ -55,29 +81,22 @@ nav .search-form {
 /* CAROSSEL */
 main{
     align-items: center;
-    margin-top: 60px;
+    margin-top: -65px;
     width: 100%;
 }
 
-/* Carrousel - styles pour les contrôles du carrousel */
-.carousel-control-prev,
-.carousel-control-next {
-    background-color:rgba(255, 217, 0, 0.253); /* Couleur de fond des boutons de défilement à rouge */
-    opacity: 0.5; /* Opacité pour éviter qu'ils ne soient trop distrayants */
-}
 
 
 /* Carrousel - styles pour les images */
 .slide img {
     width: 100%; /* Les images prennent toute la largeur du carrousel */
-    height: 600px; /* Limite la hauteur des images à 300px */
+    height: 700px; /* Limite la hauteur des images à 300px */
     object-fit: cover; /* Permet à l'image de s'ajuster en fonction de la taille du conteneur tout en conservant le ratio d'aspect */
 }
 
 
 /* Carrousel - styles pour les légendes */
 .carousel-caption {
-    text-align: left; /* Centre le texte de la légende */
     width: 100%; /* La légende prend toute la largeur du carrousel */
     position: absolute; /* Gardez la légende en position absolue par rapport à l'image */
     bottom: 40%; /* Espace entre la légende et le bas de l'image */
@@ -87,7 +106,7 @@ main{
 
 /* Carrousel - style pour le titre */
 .carousel-caption h1 {
-    color: white; /* Titre de couleur blueviolet */
+    color: black;
 }
 /* Carrousel - styles pour les légendes */
 
@@ -96,4 +115,11 @@ main{
     top: 0;
     right: 0;
     left: 0;
+}
+
+/* Footer */
+.myFooter {
+    background-color: black;
+    color: white;
+    padding: 5px;
 }

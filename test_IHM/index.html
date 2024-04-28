@@ -20,49 +20,47 @@
 
     <title>Home My-Way</title>
 </head>
-
 <body>
+ <!-- Header -->
+ <section class="myHeader">
+    <!-- Navbar -->
+    <div class="myNavbar">
+        <nav class="navbar navbar-expand-md bg-primary fixed-top">
+            <a class="navbar-brand" href="index.html">
+                <img src="asset/images/logo.jpeg" alt="logo" class="rounded-circle">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <!-- Menu de navigation -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <h5>Home</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Map.html">
+                            <h5>Map</h5>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="profile-container">
+                            <a href="profile.html">
+                                <img src="asset/images/ppgaby.jpg" alt="you" class="rounded-circle d-block" width="30" height="30">
+                                <small class="d-block">Gabriel</small>
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
 
-    <!-- NAVBAR -->
-    <section class="navbar">
-        <header>
-            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-primary">
-                <a class="navbar-brand" href="index.html">
-                    <img src="/asset/images/logo.jpeg" alt="logo" class="rounded-circle">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Formulaire de recherche -->
-                        <form class="form-inline mt-2 mt-md-0 search-form">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-success my-2 my-sm-0 mybtn" type="submit">Search</button>
-                        </form>
-
-                        <!-- Menu de navigation -->
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html"><h5>Home</h5> <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Map.html"><h5>Map</h5></a>
-                        </li>
-                        <li class="nav-item">
-                            <div class="profile-container">
-                              <a href="profile.html">
-                                <img src="/asset/images/ppgaby.jpg" alt="you" class="rounded-circle" width="30" height="30">
-                                <small style="color: white">Gabriel</small>
-                              </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-    </section>
-
-    <!-- CARROUSEL -->
+<!-- CARROUSEL -->
     <main role="main">
       <div class="container-fluid carossel">
 
@@ -76,9 +74,9 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <!-- Remplacez les images par vos propres images -->
-                <img class="slide first-slide" src="/asset/images/image1.jpeg" alt="First slide">
+                <img class="slide first-slide" src="/asset/images/nouvelleimage4.jpeg" alt="First slide">
                 <div class="container">
-                    <div class="carousel-caption ">
+                    <div class="carousel-caption d-flex justify-content-center ">
                         <h1>Voyagez en toute sérénité avec notre suivi d'itinéraire en temps réel.</h1>
                         <h4>Planifiez et suivez chaque étape de votre voyage en toute confiance.</h4>
                         <p><a class="btn btn-lg btn-primary mybutton" href="register.html" role="button">Inscrivez-vous aujourd'hui</a></p>
@@ -88,9 +86,9 @@
             
             <div class="carousel-item">
               <!-- Remplacez les images par vos propres images -->
-              <img class="slide second-slide" src="/asset/images/image2.jpeg" alt="Second slide">
+              <img class="slide second-slide" src="/asset/images/nouvelleimage5.jpeg" alt="Second slide">
               <div class="container">
-                  <div class="carousel-caption">
+                  <div class="carousel-caption d-flex justify-content-center">
                       <h1>Explorez des itinéraires uniques pour des voyages mémorables.</h1>
                       <h4>Découvrez des destinations cachées et des parcours sur mesure.</h4>
                       <p><a class="btn btn-lg btn-primary mybutton" href="Map.html" role="button">Visitez la carte</a></p>
@@ -99,9 +97,9 @@
           </div>
           <div class="carousel-item">
             <!-- Remplacez les images par vos propres images -->
-            <img class="slide third-slide" src="asset/images/image3.jpeg" alt="Third slide">
+            <img class="slide third-slide" src="asset/images/nouvelleimage6.jpeg" alt="Third slide">
             <div class="container">
-                <div class="carousel-caption ">
+                <div class="carousel-caption d-flex justify-content-center">
                     <h1>Optimisez votre voyage avec des itinéraires personnalisés et faciles à suivre.</h1>
                     <h4>Simplifiez vos déplacements avec de simples vues  sur le trajet.</h4>
                     <p><a class="btn btn-lg btn-primary mybutton" href="Map.html" role="button">Explorer</a></p>
@@ -131,50 +129,53 @@
   <div class="row justify-content-center">
       <!-- Bouton Visiter -->
       <div class="col-md-3 text-center">
-          <a href="Map.html" class="btn btn-primary btn-lg mb-3">Explorer notre site</a>
+          <a href="Map.html" class="btn btn-primary btn-lg mb-3 mybutton">Explorer notre site</a>
       </div>
-
+ 
       <!-- Bouton Rechercher un lieu -->
       <div class="col-md-3 text-center">
-          <a href="Map.html" class="btn btn-primary btn-lg mb-3">Rechercher un lieu</a>
+          <a href="Map.html" class="btn btn-primary btn-lg mb-3 mybutton">Rechercher un lieu</a>
       </div>
 
       <!-- Bouton Rechercher un itinéraire -->
       <div class="col-md-3 text-center">
-          <a href="Map.html" class="btn btn-primary btn-lg mb-3">Rechercher un itinéraire</a>
+          <a href="Map.html" class="btn btn-primary btn-lg mb-3 mybutton">Rechercher un itinéraire</a>
       </div>
 
       <!-- Bouton Rechercher un itinéraire -->
       <div class="col-md-3 text-center">
-        <a href="Map.html" class="btn btn-primary btn-lg mb-3">Travaillez avec nous</a>
+        <a href="Map.html" class="btn btn-primary btn-lg mb-3 mybutton">Travaillez avec nous</a>
     </div>
   </div>
 </section>
 
     </div>
 
-    <!-- Footer -->
-<footer class="bg-dark text-white py-4">
-  <div class="container">
-      <div class="row">
-          <!-- Section À propos de nous -->
-          <div class="col-md-6">
-              <h5>À propos de nous</h5>
-              <p>Nous sommes une plateforme dédiée à l'organisation et à l'optimisation de vos voyages. Notre équipe travaille sans relâche pour vous offrir des itinéraires sur mesure, des recommandations locales et un suivi en temps réel pour que vous puissiez voyager en toute sérénité.</p>
-          </div>
+          <!-- Footer -->
+          <section class="myFooter">
+            <footer class="bg-dark text-white py-4">
+              <div class="container">
+                  <div class="row">
+                      <!-- Section À propos de nous -->
+                      <div class="col-md-6">
+                          <h5>À propos de nous</h5>
+                          <p>Nous sommes une plateforme dédiée à l'organisation et à l'optimisation de vos voyages. Notre équipe travaille sans relâche pour vous offrir des itinéraires sur mesure, des recommandations locales et un suivi en temps réel pour que vous puissiez voyager en toute sérénité.</p>
+                      </div>
+            
+                      <!-- Section Nous contacter -->
+                      <div class="col-md-6">
+                          <h5>Nous contacter</h5>
+                          <ul class="list-unstyled">
+                              <li><i class="fas fa-map-marker-alt"></i> Adresse: enspy, Yaounde</li>
+                              <li><i class="fas fa-phone"></i> Téléphone: +237 620 86 47 61</li>
+                              <li><i class="fas fa-envelope"></i> Email: contact@myway.com</li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+            </footer>
+          </section>
 
-          <!-- Section Nous contacter -->
-          <div class="col-md-6">
-              <h5>Nous contacter</h5>
-              <ul class="list-unstyled">
-                  <li><i class="fas fa-map-marker-alt"></i> Adresse: enspy, Yaounde</li>
-                  <li><i class="fas fa-phone"></i> Téléphone: +237 620 86 47 61</li>
-                  <li><i class="fas fa-envelope"></i> Email: contact@myway.com</li>
-              </ul>
-          </div>
-      </div>
-  </div>
-</footer>
 
 
     <!-- Scripts JavaScript -->
