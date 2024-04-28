@@ -4,12 +4,15 @@
     <title>Carte OpenStreetMap avec Leaflet</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <!-- Inclure la feuille de style Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    
+    <!-- Inclure la feuille de style du plugin de recherche -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-search/dist/leaflet-search.min.css" />
+
     <!-- Inclure la bibliothèque JavaScript Leaflet -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- Inclure la bibliothèque de recherche pour Leaflet -->
+    <script src="https://unpkg.com/leaflet-search/dist/leaflet-search.min.js"></script>
     
     <!-- Inclure la bibliothèque de routage pour Leaflet -->
     <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
@@ -53,20 +56,42 @@
         // Essayer de centrer la carte sur la position de l'utilisateur
         map.locate({setView: true, maxZoom: 16});
 
-        // Si la géolocalisation échoue, centrer la carte sur Yaoundé
+        // Modifier le gestionnaire d'événements 'locationfound'
+        map.on('locationfound', function(e) {
+            if (waypoints.length === 0) { // Si aucun waypoint n'a été défini
+                var redMarker = L.circleMarker(e.latlng, {
+                    radius: 8,
+                    fillColor: "#ff0000",
+                    color: "#000",
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                }).addTo(map); // Ajouter le marqueur rouge à la carte
+    
+                waypoints.push(e.latlng); // Ajouter la position actuelle aux waypoints
+                control.spliceWaypoints(0, 0, e.latlng); // Ajouter la position actuelle au contrôleur de routage
+                map.setView(e.latlng, 13); // Centrer la carte sur la position actuelle
+            }
+        });
+
+        // Modifier le gestionnaire d'événements 'locationerror'
         map.on('locationerror', function() {
-            map.setView(yaounde, 13);
+            if (waypoints.length === 0) { // Si aucun waypoint n'a été défini
+                map.setView(yaounde, 13); // Centrer la carte sur Yaoundé
+            }
         });
 
 
         // Ajouter la fonction pour calculer l'itinéraire
         function calculateRoute() {
             if (waypoints.length === 2) {
+                // Utiliser les positions actuelles des waypoints pour calculer l'itinéraire
+                control.setWaypoints(waypoints);
+                control.route(); // Cette méthode recalculera l'itinéraire
                 // Construire l'URL de la requête pour OpenRouteService
-                var orsDirectionsUrl = 'https://api.openrouteservice.org/v2/directions/driving-car?api_key=' + '5b3ce3597851110001cf62487ddb1d6fc58545ce8d7285a2c5c98fd4' + '&start=' + waypoints[0].lng + ',' + waypoints[0].lat + '&end=' + waypoints[1].lng + ',' + waypoints[1].lat;
-
+                //var orsDirectionsUrl = 'https://api.openrouteservice.org/v2/directions/driving-car?api_key=' + '5b3ce3597851110001cf62487ddb1d6fc58545ce8d7285a2c5c98fd4' + '&start=' + waypoints[0].lng + ',' + waypoints[0].lat + '&end=' + waypoints[1].lng + ',' + waypoints[1].lat;
                 // Faire la requête à OpenRouteService
-                fetch(orsDirectionsUrl)
+                /*fetch(orsDirectionsUrl)
                     .then(function(response) {
                         return response.json();
                     })
@@ -92,7 +117,9 @@
                     })
                     .catch(function(error) {
                         console.error('Erreur lors de la récupération de l\'itinéraire', error);
-                    });
+                    });*/
+                control.setWaypoints(waypoints);
+                
             } else {
                 alert('Veuillez sélectionner deux points sur la carte.');
             }
@@ -107,6 +134,43 @@
             }
             // Calculer et afficher l'itinéraire
             calculateRoute();
+        });
+
+        // Ajouter la barre de recherche à la carte
+        var searchControl = new L.Control.Search({
+            url: 'https://nominatim.openstreetmap.org/search?format=json&q={s}',
+            jsonpParam: 'json_callback',
+            propertyName: 'display_name',
+            propertyLoc: ['lat','lon'],
+            marker: L.circleMarker([0,0],{radius:30}),
+            autoCollapse: true,
+            autoType: false,
+            minLength: 2
+        });
+
+        map.addControl(searchControl);
+
+        // Modifier le marqueur de recherche pour qu'il soit rouge
+        searchControl.on('search:locationfound', function(e) {
+            e.layer.setStyle({fillColor: '#ff0000', color: '#ff0000'});
+            if (waypoints[1]) {
+                map.removeLayer(waypoints[1]); // Supprimer l'ancien marqueur
+            }
+            waypoints[1] = L.marker(e.latlng, {icon: redIcon, draggable: true}).addTo(map);
+            //calculateRoute(); // Recalculer l'itinéraire avec le nouveau waypoint
+        });
+
+        waypoints[0].on('dragend', function(e) {
+            var newLatLng = e.target.getLatLng();
+            waypoints[0] = newLatLng;
+            //calculateRoute(); // Recalculer l'itinéraire avec les nouveaux waypoints
+        });
+
+        // Gestionnaire d'événement pour le déplacement du deuxième marqueur
+        waypoints[1].on('dragend', function(e) {
+            var newLatLng = e.target.getLatLng();
+            waypoints[1] = newLatLng;
+            //calculateRoute(); // Recalculer l'itinéraire avec les nouveaux waypoints
         });
     </script>
 </body>
