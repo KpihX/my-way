@@ -89,7 +89,7 @@ management:
 
 spring:
   application:
-    name: youTodo
+    name: myWay
   profiles:
     # The commented value for `active` can be replaced with valid Spring profiles to load.
     # Otherwise, it will be filled in by gradle when building the JAR file
@@ -112,13 +112,13 @@ spring:
       enabled: true
   task:
     execution:
-      thread-name-prefix: you-todo-task-
+      thread-name-prefix: my-way-task-
       pool:
         core-size: 2
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: you-todo-scheduling-
+      thread-name-prefix: my-way-scheduling-
       pool:
         size: 2
   thymeleaf:
@@ -149,7 +149,7 @@ info:
 
 jhipster:
   clientApp:
-    name: 'youTodoApp'
+    name: 'myWayApp'
   # By default CORS is disabled. Uncomment to enable.
   # cors:
   #   allowed-origins: "http://localhost:8100,http://localhost:9000"
@@ -159,12 +159,12 @@ jhipster:
   #   allow-credentials: true
   #   max-age: 1800
   mail:
-    from: youTodo@localhost
+    from: myWay@localhost
   api-docs:
     default-include-pattern: /api/**
     management-include-pattern: /management/**
-    title: You Todo API
-    description: You Todo API documentation
+    title: My Way API
+    description: My Way API documentation
     version: 0.0.1
     terms-of-service-url:
     contact-name:

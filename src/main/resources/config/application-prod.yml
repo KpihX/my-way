@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: INFO
     tech.jhipster: INFO
-    com.kpihx_lab.youtodo: INFO
+    com.kpihx_labs.myway: INFO
 
 management:
   prometheus:
@@ -34,14 +34,14 @@ spring:
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: prod
-    url: jdbc:mysql://localhost:3306/youTodo?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/myWay?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
   mail:
     host: localhost
     port: 25
     username:
     password:
   r2dbc:
-    url: r2dbc:mysql://localhost:3306/youTodo?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    url: r2dbc:mysql://localhost:3306/myWay?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
     username: root
     password:
   thymeleaf:
@@ -49,7 +49,7 @@ spring:
 
 # ===================================================================
 # To enable TLS in production, generate a certificate using:
-# keytool -genkey -alias youtodo -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
+# keytool -genkey -alias myway -storetype PKCS12 -keyalg RSA -keysize 2048 -keystore keystore.p12 -validity 3650
 #
 # You can also use Let's Encrypt:
 # See details in topic "Create a Java Keystore (.JKS) from Let's Encrypt Certificates" on https://maximilian-boehm.com/en-gb/blog
@@ -92,7 +92,7 @@ jhipster:
         # - In the Consul configserver
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: YjYwMGY5NDQ5Y2E5MGUwMDIxN2NjYzRhOGI5ZTg1MDhiNWEzMWI3NThlOThkYTA2NjMyZTQ0YmE4ZDgwNjEzOWQzZmUwZGU4ZmQ1MGViNjBmMDk4ZjQ4ZjMxNzQyZjFhNmNmZjk4Y2VlZGI1NjZlZGIwYjhmYTBlZDVhNjcxODc=
+        base64-secret: NTBmN2YxNTE4YTg2NDM1YTU2YjA3N2Y4ZGM3YjMwODlkMmVjNDZiNDhkYTVlMjk3MGZjMTI5ZTE3NTU1MDM3OTU4NmNlYTUyMjg0OWRlYWYwY2IzNmY2N2M5M2NhM2FiNTA2NWM0YjE4ZTAwM2U5NTdkODk4MGFhZTI4ODRiMjI=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000

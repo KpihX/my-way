@@ -98,7 +98,7 @@ module.exports = async options =>
         },
       ),
       new WebpackNotifierPlugin({
-        title: 'You Todo',
+        title: 'My Way',
         contentImage: path.join(__dirname, 'logo-jhipster.png'),
       }),
     ].filter(Boolean),

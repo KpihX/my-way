@@ -1,7 +1,7 @@
 apply plugin: "war"
 
 bootWar {
-    mainClass = "com.kpihx_lab.youtodo.YouTodoApp"
+    mainClass = "com.kpihx_labs.myway.MyWayApp"
     includes = ["WEB-INF/**", "META-INF/**"]
     webXml = file("${project.rootDir}/src/main/webapp/WEB-INF/web.xml")
 }

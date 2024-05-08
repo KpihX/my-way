@@ -15,7 +15,7 @@
 
 spring:
   application:
-    name: youTodo
+    name: myWay
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: test
@@ -30,13 +30,13 @@ spring:
     basename: i18n/messages
   task:
     execution:
-      thread-name-prefix: you-todo-task-
+      thread-name-prefix: my-way-task-
       pool:
         core-size: 1
         max-size: 50
         queue-capacity: 10000
     scheduling:
-      thread-name-prefix: you-todo-scheduling-
+      thread-name-prefix: my-way-scheduling-
       pool:
         size: 20
   thymeleaf:
@@ -53,9 +53,9 @@ server:
 # ===================================================================
 jhipster:
   clientApp:
-    name: 'youTodoApp'
+    name: 'myWayApp'
   mail:
-    from: youTodo@localhost.com
+    from: myWay@localhost.com
     base-url: http://127.0.0.1:8080
   logging:
     # To test json console appender
@@ -69,7 +69,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: YjYwMGY5NDQ5Y2E5MGUwMDIxN2NjYzRhOGI5ZTg1MDhiNWEzMWI3NThlOThkYTA2NjMyZTQ0YmE4ZDgwNjEzOWQzZmUwZGU4ZmQ1MGViNjBmMDk4ZjQ4ZjMxNzQyZjFhNmNmZjk4Y2VlZGI1NjZlZGIwYjhmYTBlZDVhNjcxODc=
+        base64-secret: NTBmN2YxNTE4YTg2NDM1YTU2YjA3N2Y4ZGM3YjMwODlkMmVjNDZiNDhkYTVlMjk3MGZjMTI5ZTE3NTU1MDM3OTU4NmNlYTUyMjg0OWRlYWYwY2IzNmY2N2M5M2NhM2FiNTA2NWM0YjE4ZTAwM2U5NTdkODk4MGFhZTI4ODRiMjI=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 86400

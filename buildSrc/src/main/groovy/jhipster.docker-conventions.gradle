@@ -13,7 +13,7 @@ jib {
         }
     }
     to {
-        image = "youtodo:latest"
+        image = "myway:latest"
     }
     container {
         entrypoint = ["bash", "-c", "/entrypoint.sh"]

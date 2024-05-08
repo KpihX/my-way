@@ -7,7 +7,7 @@ configurations {
 }
 
 dependencies {
-    compileOnly "org.springframework.boot:spring-boot-devtools"
+    developmentOnly "org.springframework.boot:spring-boot-devtools"
     implementation "io.asyncer:r2dbc-mysql"
     implementation "com.mysql:mysql-connector-j"
     testImplementation "org.testcontainers:mysql"
