@@ -1,0 +1,24 @@
+{
+  "myWayApp": {
+    "locationCategory": {
+      "home": {
+        "title": "LocationCategories",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Location Category",
+        "createOrEditLabel": "Créer ou éditer un Location Category",
+        "notFound": "Aucun Location Category trouvé"
+      },
+      "created": "Un nouveau Location Category a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Location Category avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Location Category avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Location Category {{ id }} ?"
+      },
+      "detail": {
+        "title": "Location Category"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}

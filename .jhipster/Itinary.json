@@ -1,0 +1,44 @@
+{
+  "annotations": {
+    "changelogDate": "20240508194432"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "distance",
+      "fieldType": "Double"
+    },
+    {
+      "fieldName": "duration",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "polyline",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "Itinary",
+  "relationships": [
+    {
+      "otherEntityField": "name",
+      "otherEntityName": "location",
+      "otherEntityRelationshipName": "itinary",
+      "relationshipName": "location",
+      "relationshipSide": "left",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}

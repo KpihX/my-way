@@ -1,0 +1,41 @@
+entity Location {
+  latitude Double required,
+  longitude Double required,
+  name String required,
+  description String,
+  address String
+}
+entity LocationCategory {
+  name String required
+}
+entity Itinary {
+  name String required,
+  description String,
+  distance Double,
+  duration Integer,
+  polyline String required
+}
+// entity ApplicationUser {
+//   // Ajoutez ici les champs supplémentaires que vous souhaitez associer à l'utilisateur
+// }
+entity FavoriteLocation {
+  name String required
+}
+entity FrequentItinary {
+  name String required
+}
+// relationship OneToOne {
+//   ApplicationUser{user(login)} to User with builtInEntity
+// }
+relationship ManyToOne {
+  FavoriteLocation{user} to User with builtInEntity , FrequentItinary{user} to User with builtInEntity , Location{category} to LocationCategory
+}
+// relationship OneToMany {
+//   ApplicationUser{favoriteLocation} to FavoriteLocation{applicationUser(login)},
+//   ApplicationUser{frequentItinary} to FrequentItinary{applicationUser(login)}
+// }
+relationship ManyToMany {
+  Itinary{location(name)} to Location{itinary}
+}
+dto * with mapstruct
+service * with serviceClass

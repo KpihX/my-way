@@ -1,0 +1,25 @@
+{
+  "myWayApp": {
+    "frequentItinary": {
+      "home": {
+        "title": "FrequentItinaries",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Frequent Itinary",
+        "createOrEditLabel": "Créer ou éditer un Frequent Itinary",
+        "notFound": "Aucun Frequent Itinary trouvé"
+      },
+      "created": "Un nouveau Frequent Itinary a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Frequent Itinary avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Frequent Itinary avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Frequent Itinary {{ id }} ?"
+      },
+      "detail": {
+        "title": "Frequent Itinary"
+      },
+      "id": "ID",
+      "name": "Name",
+      "user": "User"
+    }
+  }
+}

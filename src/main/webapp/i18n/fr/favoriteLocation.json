@@ -1,0 +1,25 @@
+{
+  "myWayApp": {
+    "favoriteLocation": {
+      "home": {
+        "title": "FavoriteLocations",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Favorite Location",
+        "createOrEditLabel": "Créer ou éditer un Favorite Location",
+        "notFound": "Aucun Favorite Location trouvé"
+      },
+      "created": "Un nouveau Favorite Location a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Favorite Location avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Favorite Location avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Favorite Location {{ id }} ?"
+      },
+      "detail": {
+        "title": "Favorite Location"
+      },
+      "id": "ID",
+      "name": "Name",
+      "user": "User"
+    }
+  }
+}

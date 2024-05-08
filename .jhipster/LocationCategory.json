@@ -1,0 +1,18 @@
+{
+  "annotations": {
+    "changelogDate": "20240508194431"
+  },
+  "applications": "*",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "name": "LocationCategory",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceClass"
+}
