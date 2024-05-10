@@ -3,17 +3,21 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet-routing-machine';
 import 'leaflet-routing-machine/dist/leaflet-routing-machine.css';
-// import { SearchControl, OpenStreetMapProvider } from 'react-leaflet-geosearch';
+// Importer les styles du plugin Leaflet Search
+import 'leaflet-search/dist/leaflet-search.min.css';
+import 'leaflet-search';
 
 const Map: FC = () => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const [map, setMap] = useState<L.Map | null>(null);
   const [waypoints, setWaypoints] = useState<L.LatLng[]>([]);
   const [control, setControl] = useState<L.Routing.Control | null>(null);
+  const yaounde: L.LatLngExpression = [3.848, 11.502];
+  const max_number_of_waypoints = 5;
 
   useEffect(() => {
     if (!mapContainerRef.current) return;
-    const initialMap = L.map(mapContainerRef.current).setView([3.848, 11.502], 13);
+    const initialMap = L.map(mapContainerRef.current).setView(yaounde, 13);
     setMap(initialMap);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -29,14 +33,38 @@ const Map: FC = () => {
     }).addTo(initialMap);
     setControl(routingControl);
 
-    // const provider = new OpenStreetMapProvider();
-
     initialMap.locate({ setView: true, maxZoom: 16 });
 
     initialMap.on('click', e => {
-      const newWaypoint = L.Routing.waypoint(e.latlng);
-      setWaypoints(prevWaypoints => [...prevWaypoints, e.latlng]);
-      routingControl.spliceWaypoints(routingControl.getWaypoints().length, 0, newWaypoint);
+      if (waypoints.length < max_number_of_waypoints) {
+        const newWaypoint = L.Routing.waypoint(e.latlng);
+        setWaypoints(prevWaypoints => [...prevWaypoints, e.latlng]);
+        routingControl.spliceWaypoints(routingControl.getWaypoints().length, 0, newWaypoint);
+      }
+    });
+
+    initialMap.on('locationfound', e => {
+      if (waypoints.length === 0) {
+        const redMarker = L.circleMarker(e.latlng, {
+          radius: 8,
+          fillColor: '#ff0000',
+          color: '#000',
+          weight: 1,
+          opacity: 1,
+          fillOpacity: 0.8,
+        }).addTo(initialMap);
+
+        setWaypoints(prevWaypoints => [...prevWaypoints, e.latlng]);
+        routingControl.spliceWaypoints(0, 0, L.Routing.waypoint(redMarker.getLatLng()));
+        initialMap.setView(e.latlng, 13);
+      }
+    });
+
+    initialMap.on('locationerror', () => {
+      alert("Veuillez autoriser l'acces à votre localisation! Cela permettra de personnaliser votre expérience sur notre site.");
+      if (waypoints.length === 0) {
+        initialMap.setView(yaounde, 13);
+      }
     });
 
     return () => {
