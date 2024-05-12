@@ -7,3 +7,13 @@ declare module '*.json' {
   const value: any;
   export default value;
 }
+
+// declare module 'leaflet' {
+//   namespace Icon {
+//     interface Default {
+//       _getIconUrl: () => string;
+//       _getIconRetinaUrl: () => string;
+//       _getShadowUrl: () => string;
+//     }
+//   }
+// }
