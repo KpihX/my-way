@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { MdMyLocation } from 'react-icons/md';
-import { useMap } from 'react-leaflet';
 
 const LocationButton = ({ locationAllowed, setLocationAllowed }) => {
   const handleClick = event => {
@@ -9,7 +8,7 @@ const LocationButton = ({ locationAllowed, setLocationAllowed }) => {
   };
 
   return (
-    <div style={{ position: 'absolute', top: '80px', left: '6px', zIndex: 9999 }}>
+    <div style={{ position: 'absolute', top: '100px', left: '25px', zIndex: 9999 }}>
       <button
         onClick={handleClick}
         title="Utiliser ma position actuelle"

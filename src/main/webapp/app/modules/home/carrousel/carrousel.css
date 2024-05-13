@@ -1,0 +1,14 @@
+/* .Carousel{
+    padding-top: 50px;
+} */
+
+.slide {
+  margin-top: 30px;
+  width: 100%;
+  height: 70vh; /* Ajustement de la hauteur de l'image */
+  object-fit: cover;
+}
+
+.myCaption {
+  margin-bottom: 30px;
+}

@@ -11,6 +11,7 @@ import LocationButton from './locationButton';
 import { marquerIcon } from './icons';
 import LocationMarker from './locationMarker';
 import RoutingMap from './routingMap';
+import { AiOutlineInfoCircle } from 'react-icons/ai';
 
 const yaounde: L.LatLngExpression = [3.848, 11.502];
 
@@ -32,6 +33,8 @@ function MapEvents({ points, setPoints, max_points }) {
   return null; // Ce composant ne rend rien lui-même
 }
 
+const travelModes = ['driving', 'walking', 'cycling'];
+
 const Map: FC = () => {
   // const mapContainerRef = useRef<HTMLDivElement>(null);
   // const [map, setMap] = useState<L.Map | null>(null);
@@ -42,7 +45,16 @@ const Map: FC = () => {
   const [points, setPoints] = useState([]);
   const [route, setRoute] = useState(null);
   const [bestPath, setBestPath] = useState(false);
+  const [showRouteDetails, setShowRouteDetails] = useState(true);
+  const [travelMode, setTravelMode] = useState(travelModes[0]); // 'driving', 'walking', etc.
   const max_points = 5;
+  const travelModeRef = React.useRef<HTMLSelectElement>(null);
+
+  const handleTravelModeChange = () => {
+    if (travelModeRef.current) {
+      setTravelMode(travelModeRef.current.value);
+    }
+  };
 
   React.useEffect(() => {
     if (locationFound && (!points[0] || (locationFound.lat === points[0].lat && locationFound.lng === points[0].lng))) {
@@ -177,12 +189,13 @@ const Map: FC = () => {
 
   return (
     <div>
+      <LocationButton locationAllowed={locationAllowed} setLocationAllowed={setLocationAllowed} />
       <MapContainer center={yaounde} zoom={13} style={{ height: '400px', zIndex: 10 }}>
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         />
-        <LocationButton locationAllowed={locationAllowed} setLocationAllowed={setLocationAllowed} />
+        {/* {showRouteDetails && <RouteDetails route={route} />} */}
         <LocationMarker
           locationAllowed={locationAllowed}
           setLocationAllowed={setLocationAllowed}
@@ -209,7 +222,14 @@ const Map: FC = () => {
           </Marker>
         ))}
         <MapEvents points={points} setPoints={setPoints} max_points={max_points} />
-        <RoutingMap route={route} setRoute={setRoute} points={points} bestPath={bestPath} />
+        <RoutingMap
+          route={route}
+          setRoute={setRoute}
+          points={points}
+          bestPath={bestPath}
+          showRouteDetails={showRouteDetails}
+          travelMode={travelMode}
+        />
       </MapContainer>
       {/* <button onClick={calculateRoute}>Meilleur chemin</button>
       <button onClick={showSteps}>Étapes</button>
@@ -217,9 +237,23 @@ const Map: FC = () => {
       {/* ...autres éléments de l'interface utilisateur */}
       <div>
         {/* <div style={{ position: 'absolute', bottom: 10, left: 10, zIndex: 500 }}> */}
+        <button
+          style={{ position: 'absolute', top: 30, right: 30, zIndex: 1000 }}
+          onClick={() => setShowRouteDetails(!showRouteDetails)}
+          title="Afficher les détails du trajet"
+        >
+          <AiOutlineInfoCircle size={25} />
+        </button>
         <button onClick={removeLastPoint}>Retirer le dernier point</button>
         <button onClick={clearPoints}>Vider les points</button>
         <button onClick={() => setBestPath(!bestPath)}>Mailleur Itinéraire</button>
+        <select ref={travelModeRef} onChange={handleTravelModeChange} value={travelMode}>
+          {travelModes.map(mode => (
+            <option key={mode} value={mode}>
+              {mode}
+            </option>
+          ))}
+        </select>
       </div>
     </div>
   );

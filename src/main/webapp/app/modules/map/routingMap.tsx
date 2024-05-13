@@ -21,26 +21,40 @@ declare global {
   }
 }
 
-const RoutingMap = ({ points, route, setRoute, bestPath }) => {
+const RoutingMap = ({ points, route, setRoute, bestPath, showRouteDetails, travelMode }) => {
   const map = useMap();
 
   useEffect(() => {
     // Vérifiez s'il y a suffisamment de points pour tracer un itinéraire
     // console.log("dfd: ", L.Routing)
-    if (!map) return;
+    if (!map || !L.Routing) return;
 
-    if (L.Routing && points.length > 1) {
+    if (points.length > 1) {
       // Créez une instance de L.Routing.Control et ne l'ajoutez pas encore à la carte
       const routingControl = L.Routing.control({
         router: L.Routing.osrmv1({
           serviceUrl: 'https://router.project-osrm.org/route/v1',
+          profile: travelMode,
         }),
         waypoints: points.map(point => L.Routing.waypoint(point)),
         routeWhileDragging: true,
-        // createMarker() { return null; }, // Pas de marqueur pour les waypoints
-        addWaypoints: false,
-        show: true,
-      }).addTo(map);
+        createMarker() {
+          return null;
+        }, // Pas de marqueur pour les waypoints
+        // addWaypoints: false,
+        show: false,
+        showAlternatives: true,
+      });
+
+      if (routingControl) {
+        if (showRouteDetails) {
+          // If showRouteDetails is true, add the routingControl to the map
+          routingControl.addTo(map);
+        } else {
+          // If showRouteDetails becomes false, remove the routingControl from the map
+          routingControl.remove();
+        }
+      }
 
       // Calculer l'itinéraire
       routingControl.on('routesfound', e => {
@@ -51,19 +65,22 @@ const RoutingMap = ({ points, route, setRoute, bestPath }) => {
         }
       });
 
+      // Utilisez le service de routage pour calculer l'itinéraire
+
+      routingControl.route();
+
       // routingControl.on('routingerror', () => {
       //   alert('Erreur de calcul de l’itinéraire!');
       // });
 
-      // Utilisez le service de routage pour calculer l'itinéraire
-      routingControl.route();
-
       // Nettoyage
       return () => {
-        routingControl.remove();
+        if (routingControl) {
+          routingControl.remove();
+        }
       };
     }
-  }, [map, points, setRoute, bestPath]);
+  }, [map, setRoute, bestPath, showRouteDetails, travelMode]);
 
   // console.log("***", route)
 
