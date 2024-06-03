@@ -10,6 +10,20 @@ export const marquerIcon = L.icon({
   tooltipAnchor: [16, -28], // Le point à partir duquel l'infobulle du marqueur s'ouvrira
 });
 
+export const middleMarquer = L.divIcon({
+  className: 'custom-marker-icon',
+  html: `<div style="width: 18px; height: 18px; border: 2px solid white; background-color: gray; border-radius: 50%;"></div>`,
+  iconAnchor: [9, 9], // Centre du cercle
+  popupAnchor: [0, -9], // Popup centrée au-dessus du cercle
+});
+
+export const endMarquer = L.divIcon({
+  className: 'custom-marker-icon',
+  html: `<div style="width: 18px; height: 18px; border: 2px solid white; background-color: green; border-radius: 50%;"></div>`,
+  iconAnchor: [9, 9], // Centre du cercle
+  popupAnchor: [0, -9], // Popup centrée au-dessus du cercle
+});
+
 export const positionMarquer = L.divIcon({
   className: 'custom-marker-icon',
   html: `<div style="width: 18px; height: 18px; border: 2px solid white; background-color: blue; border-radius: 50%;"></div>`,
