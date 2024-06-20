@@ -1,0 +1,24 @@
+{
+  "myWayApp": {
+    "placeCategory": {
+      "home": {
+        "title": "PlaceCategories",
+        "refreshListLabel": "Actualiser la liste",
+        "createLabel": "Créer un nouveau Place Category",
+        "createOrEditLabel": "Créer ou éditer un Place Category",
+        "notFound": "Aucun Place Category trouvé"
+      },
+      "created": "Un nouveau Place Category a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Place Category avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Place Category avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Êtes-vous certain de vouloir supprimer le Place Category {{ id }} ?"
+      },
+      "detail": {
+        "title": "Place Category"
+      },
+      "id": "ID",
+      "name": "Name"
+    }
+  }
+}
