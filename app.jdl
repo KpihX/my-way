@@ -1,0 +1,28 @@
+entity Place {
+  name String required
+  display_name String  // Description
+  lat Double required
+  lon Double required
+  image String
+}
+entity PlaceCategory {
+  name String required
+}
+entity Itinary {
+  name String required
+  pref_name String 
+  description String
+  totalDistance Double required
+  totalTime Double required
+  image String
+}
+relationship OneToMany {
+  Itinary{places} to Place
+}
+relationship ManyToOne {
+Itinary{owner} to User with builtInEntity
+  Place{owner} to User with builtInEntity 
+  Place{category} to PlaceCategory
+}
+dto * with mapstruct
+service * with serviceClass
