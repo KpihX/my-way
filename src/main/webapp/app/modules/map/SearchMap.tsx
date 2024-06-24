@@ -10,6 +10,7 @@ const SearchMap = ({ selectedPlaces, setSelectedPlaces }) => {
   const searchLocation = async newQuery => {
     const response = await axios.get(`https://nominatim.openstreetmap.org/search?format=json&q=${newQuery}`);
     if (response.data && response.data.length > 0) {
+      // console.log(response.data);
       setSearchResults(response.data);
     } else {
       setSearchResults([]);

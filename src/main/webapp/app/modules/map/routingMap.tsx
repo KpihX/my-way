@@ -82,6 +82,10 @@ const RoutingMap = ({ points, route, setRoute, bestPath, showRouteDetails, trave
     }
   }, [map, setRoute, bestPath, showRouteDetails, travelMode]);
 
+  useEffect(() => {
+    console.log(route);
+  }, [route]);
+
   // console.log("***", route)
 
   return <>{route && points.length > 1 && <Polyline positions={route.coordinates} color="blue" />}</>;
