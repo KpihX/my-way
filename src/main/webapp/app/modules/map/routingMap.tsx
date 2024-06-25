@@ -40,7 +40,6 @@ const RoutingMap = ({ selectedPlaces, route, setRoute, bestPath, showRouteDetail
         waypoints: selectedPlaces.map(point => L.Routing.waypoint(point.lon, point.lat)),
         routeWhileDragging: true,
         createMarker() {
-          alert('hi');
           return null;
         }, // Pas de marqueur pour les wayselectedPlaces
         // addWayselectedPlaces: false,

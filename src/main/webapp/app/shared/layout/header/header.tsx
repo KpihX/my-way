@@ -5,14 +5,15 @@ import { Translate, Storage } from 'react-jhipster';
 import { Navbar, Nav, NavbarToggler, Collapse } from 'reactstrap';
 import LoadingBar from 'react-redux-loading-bar';
 
-import { Home, Brand, Map } from './header-components';
-import { AdminMenu, EntitiesMenu, AccountMenu, LocaleMenu } from '../menus';
+import { Home, Map, Brand } from './header-components';
+import { AdminMenu, EntitiesMenu, AccountMenu, LocaleMenu, DevsMenu } from '../menus';
 import { useAppDispatch } from 'app/config/store';
 import { setLocale } from 'app/shared/reducers/locale';
 
 export interface IHeaderProps {
   isAuthenticated: boolean;
   isAdmin: boolean;
+  isDevs: boolean;
   ribbonEnv: string;
   isInProduction: boolean;
   isOpenAPIEnabled: boolean;
@@ -45,7 +46,7 @@ const Header = (props: IHeaderProps) => {
 
   return (
     <div id="app-header">
-      {renderDevRibbon()}
+      {/* {renderDevRibbon()} */}
       <LoadingBar className="loading-bar" />
       <Navbar data-cy="navbar" dark expand="md" fixed="top" className="jh-navbar">
         <NavbarToggler aria-label="Menu" onClick={toggleMenu} />
@@ -54,9 +55,10 @@ const Header = (props: IHeaderProps) => {
           <Nav id="header-tabs" className="ms-auto" navbar>
             <Home />
             <Map />
-            {props.isAuthenticated && <EntitiesMenu />}
+            {/* {props.isAuthenticated && <EntitiesMenu />} */}
             {props.isAuthenticated && props.isAdmin && <AdminMenu showOpenAPI={props.isOpenAPIEnabled} />}
-            <LocaleMenu currentLocale={props.currentLocale} onClick={handleLocaleChange} />
+            {props.isAuthenticated && props.isDevs && <DevsMenu showOpenAPI={props.isOpenAPIEnabled} />}
+            {/* <LocaleMenu currentLocale={props.currentLocale} onClick={handleLocaleChange} /> */}
             <AccountMenu isAuthenticated={props.isAuthenticated} />
           </Nav>
         </Collapse>

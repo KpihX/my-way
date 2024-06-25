@@ -29,7 +29,8 @@
         var authToken = localStorage.getItem('jhi-authenticationToken') || sessionStorage.getItem('jhi-authenticationToken');
         if (authToken) {
           authToken = JSON.parse(authToken);
-          return `Bearer ${authToken}`;
+          //return `Bearer ${authToken}`;
+          return 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTcyMTkxMzI4NywiYXV0aCI6IlJPTEVfQURNSU4gUk9MRV9VU0VSIiwiaWF0IjoxNzE5MzIxMjg3fQ.uVvKfq4ytRmYAyVnOgnzcVol2aNeuVxjmDI6NBKTbd_JOU6dvlCePlOSn9qYJKFEf44NPLwEmkXotMBMzss6AQ';
         }
         return null;
       };
@@ -44,7 +45,9 @@
 
       async function fetchUrls(serverBaseUri, axiosConfig, baseUrl) {
         let urls;
-
+        console.log('* serverBaseUri', serverBaseUri);
+        console.log('* axiosConfig', axiosConfig);
+        console.log('* baseUrl', baseUrl);
         if (!urls || urls.length === 0) {
           const response = await axios.get('/management/jhiopenapigroups', axiosConfig);
           if (Array.isArray(response.data)) {

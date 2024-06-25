@@ -170,6 +170,8 @@ dependencies {
     implementation libs.commons.beanutils
     implementation "com.fasterxml.jackson.module:jackson-module-jaxb-annotations"
     implementation "com.zaxxer:HikariCP"
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
     annotationProcessor "org.glassfish.jaxb:jaxb-runtime"
     testImplementation "org.testcontainers:jdbc"
     testImplementation "org.testcontainers:junit-jupiter"

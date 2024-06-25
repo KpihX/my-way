@@ -11,7 +11,7 @@
     "creationTimestamp": 1718900127651,
     "databaseType": "sql",
     "devDatabaseType": "mysql",
-    "devServerPort": 9060,
+    "devServerPort": 9061,
     "enableGradleEnterprise": false,
     "enableHibernateCache": null,
     "enableSwaggerCodegen": false,
