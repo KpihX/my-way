@@ -61,13 +61,6 @@ const Map = () => {
   const [selectedPlaces, setSelectedPlaces] = useState([]);
 
   const max_points = 5;
-  const travelModeRef = React.useRef(null);
-
-  const handleTravelModeChange = () => {
-    if (travelModeRef.current) {
-      setTravelMode(travelModeRef.current.value);
-    }
-  };
 
   React.useEffect(() => {
     // if (locationFound && (!points[0] || (locationFound.lat === points[0].lat && locationFound.lng === points[0].lng))) {
@@ -105,9 +98,17 @@ const Map = () => {
 
   return (
     <div>
-      <SearchMap selectedPlaces={selectedPlaces} setSelectedPlaces={setSelectedPlaces} />
-      <LocationButton locationAllowed={locationAllowed} setLocationAllowed={setLocationAllowed} />
+      <SearchMap
+        selectedPlaces={selectedPlaces}
+        setSelectedPlaces={setSelectedPlaces}
+        bestPath={bestPath}
+        setBestPath={setBestPath}
+        travelMode={travelMode}
+        setTravelMode={setTravelMode}
+      />
+
       <MapContainer center={yaounde} zoom={13} style={{ height: '400px', zIndex: 10 }}>
+        <LocationButton locationAllowed={locationAllowed} setLocationAllowed={setLocationAllowed} />
         <TileLayer
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -159,16 +160,6 @@ const Map = () => {
       <button onClick={() => setShowRouteDetails(!showRouteDetails)}>
         <AiOutlineInfoCircle size={25} />
       </button>
-      <button onClick={() => setSelectedPlaces(selectedPlaces.slice(0, -1))}>Retirer le dernier marqueur</button>
-      <button onClick={() => setSelectedPlaces([])}>Rétirer tous les marqueurs</button>
-      <button onClick={() => setBestPath(!bestPath)}>Meilleur Itinéraire ?</button>
-      <select ref={travelModeRef} onChange={handleTravelModeChange} value={travelMode}>
-        {['driving', 'walking', 'cycling'].map(mode => (
-          <option key={mode} value={mode}>
-            {mode}
-          </option>
-        ))}
-      </select>
     </div>
   );
 };

@@ -8,7 +8,7 @@ const LocationButton = ({ locationAllowed, setLocationAllowed }) => {
   };
 
   return (
-    <div style={{ position: 'absolute', top: '100px', left: '25px', zIndex: 9999 }}>
+    <div style={{ position: 'absolute', top: '80px', left: '7px', zIndex: 9999 }}>
       <button
         onClick={handleClick}
         title="Utiliser ma position actuelle"

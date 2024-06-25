@@ -1,19 +1,30 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { TextField, Button, List, ListItem, ListItemText, IconButton } from '@material-ui/core';
-import DeleteIcon from '@material-ui/icons/Delete';
+import { TextField, Button, List, ListItem, ListItemText, IconButton, Collapse } from '@material-ui/core';
+import { ExpandLess, ExpandMore, Delete as DeleteIcon } from '@material-ui/icons';
 
-const SearchMap = ({ selectedPlaces, setSelectedPlaces }) => {
+const SearchMap = ({ selectedPlaces, setSelectedPlaces, bestPath, setBestPath, travelMode, setTravelMode }) => {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
+  const [searchResultsOpen, setSearchResultsOpen] = useState(false);
+  const [selectedPlacesOpen, setSelectedPlacesOpen] = useState(false);
+
+  const travelModeRef = React.useRef(null);
+
+  const handleTravelModeChange = () => {
+    if (travelModeRef.current) {
+      setTravelMode(travelModeRef.current.value);
+    }
+  };
 
   const searchLocation = async newQuery => {
     const response = await axios.get(`https://nominatim.openstreetmap.org/search?format=json&q=${newQuery}`);
     if (response.data && response.data.length > 0) {
-      // console.log(response.data);
       setSearchResults(response.data);
+      setSearchResultsOpen(true);
     } else {
       setSearchResults([]);
+      setSearchResultsOpen(false);
     }
   };
 
@@ -21,6 +32,8 @@ const SearchMap = ({ selectedPlaces, setSelectedPlaces }) => {
     setSelectedPlaces([...selectedPlaces, location]);
     setQuery('');
     setSearchResults([]);
+    setSearchResultsOpen(false);
+    setSelectedPlacesOpen(true);
   };
 
   const removeLocation = index => {
@@ -45,25 +58,49 @@ const SearchMap = ({ selectedPlaces, setSelectedPlaces }) => {
       <Button onClick={handleCoordinateInput}>Add Coordinates</Button>
 
       <List>
-        {searchResults.map((result, index) => (
-          <ListItem button key={index} onClick={() => addLocation(result)}>
-            <ListItemText primary={result.display_name} />
-          </ListItem>
-        ))}
+        <ListItem button onClick={() => setSearchResultsOpen(!searchResultsOpen)}>
+          <ListItemText primary="Search Results" />
+          {searchResultsOpen ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+        <Collapse in={searchResultsOpen} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            {searchResults.map((result, index) => (
+              <ListItem button key={index} onClick={() => addLocation(result)}>
+                <ListItemText primary={result.display_name} />
+              </ListItem>
+            ))}
+          </List>
+        </Collapse>
       </List>
 
       <List>
-        {selectedPlaces.map((place, index) => (
-          <ListItem key={index}>
-            <ListItemText
-              primary={`${index === 0 ? 'Start' : index === selectedPlaces.length - 1 ? 'End' : `Stop ${index}`}: ${place.display_name || `${place.lat}, ${place.lon}`}`}
-            />
-            <IconButton edge="end" onClick={() => removeLocation(index)}>
-              <DeleteIcon />
-            </IconButton>
-          </ListItem>
-        ))}
+        <ListItem button onClick={() => setSelectedPlacesOpen(!selectedPlacesOpen)}>
+          <ListItemText primary="Selected Places" />
+          {selectedPlacesOpen ? <ExpandLess /> : <ExpandMore />}
+        </ListItem>
+        <Collapse in={selectedPlacesOpen} timeout="auto" unmountOnExit>
+          <List component="div" disablePadding>
+            {selectedPlaces.map((place, index) => (
+              <ListItem key={index}>
+                <ListItemText
+                  primary={`${index === 0 ? 'Start' : index === selectedPlaces.length - 1 ? 'End' : `Stop ${index}`}: ${place.display_name || `${place.lat}, ${place.lon}`}`}
+                />
+                <IconButton edge="end" onClick={() => removeLocation(index)}>
+                  <DeleteIcon />
+                </IconButton>
+              </ListItem>
+            ))}
+          </List>
+        </Collapse>
       </List>
+      <select ref={travelModeRef} onChange={handleTravelModeChange} value={travelMode}>
+        {['driving', 'walking', 'cycling'].map(mode => (
+          <option key={mode} value={mode}>
+            {mode}
+          </option>
+        ))}
+      </select>
+      <button onClick={() => setBestPath(!bestPath)}>Meilleur Itinéraire ?</button>
     </div>
   );
 };

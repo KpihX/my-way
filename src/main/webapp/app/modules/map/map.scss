@@ -1,12 +1,48 @@
-// .map-container {
-//   position: relative;
-//   height: 400px !important; // Utiliser !important avec précaution
-//   width: 100% !important;
-//   overflow: hidden;
-// }
+.map-container {
+  position: relative;
+}
 
-// .leaflet-container {
-//   width: 100% !important;
-//   height: 100% !important;
-//   max-height: 400px !important;
-// }
+.drawer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100%;
+  background: white;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  z-index: 999;
+  transform: translateX(-100%);
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+.map {
+  position: relative;
+  height: 400px;
+}
+
+.route-details-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #f0f0f0;
+  }
+
+  svg {
+    fill: #333;
+  }
+}
